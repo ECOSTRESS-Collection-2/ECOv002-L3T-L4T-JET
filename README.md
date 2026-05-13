@@ -4,23 +4,23 @@ This software package has been refactored from the [ECOSTRESS Collection 2 Gridd
 
 [Gregory H. Halverson](https://github.com/gregory-halverson-jpl) (they/them)<br>
 [gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory 329G
-
-[Evan Davis](https://github.com/evandjpl) (he/him)<br>
-[evan.w.davis@jpl.nasa.gov](mailto:evan.w.davis@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory 397K
+NASA Jet Propulsion Laboratory 321H
 
 [Kerry Cawse-Nicholson](https://github.com/kcawse) (she/her)<br>
 [kerry-anne.cawse-nicholson@jpl.nasa.gov](mailto:kerry-anne.cawse-nicholson@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory 329G
+NASA Jet Propulsion Laboratory 321H
 
 [Madeleine Pascolini-Campbell](https://github.com/madeleinepc) (she/her)<br>
 [madeleine.a.pascolini-campbell@jpl.nasa.gov](mailto:madeleine.a.pascolini-campbell@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory 329F
+NASA Jet Propulsion Laboratory
+
+[Evan Davis](https://github.com/evandjpl) (he/him)<br>
+[evan.w.davis@jpl.nasa.gov](mailto:evan.w.davis@jpl.nasa.gov)<br>
+NASA Jet Propulsion Laboratory
 
 [Claire Villanueva-Weeks](https://github.com/clairesvw) (she/her)<br>
 [claire.s.villanueva-weeks@jpl.nasa.gov](mailto:claire.s.villanueva-weeks@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory 329G
+NASA Jet Propulsion Laboratory
 
 ## Authentication
 
