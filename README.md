@@ -12,11 +12,11 @@ NASA Jet Propulsion Laboratory 321H
 
 [Madeleine Pascolini-Campbell](https://github.com/madeleinepc) (she/her)<br>
 [madeleine.a.pascolini-campbell@jpl.nasa.gov](mailto:madeleine.a.pascolini-campbell@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory
+NASA Jet Propulsion Laboratory 321E
 
 [Evan Davis](https://github.com/evandjpl) (he/him)<br>
 [evan.w.davis@jpl.nasa.gov](mailto:evan.w.davis@jpl.nasa.gov)<br>
-NASA Jet Propulsion Laboratory
+NASA Jet Propulsion Laboratory 341F
 
 [Claire Villanueva-Weeks](https://github.com/clairesvw) (she/her)<br>
 [claire.s.villanueva-weeks@jpl.nasa.gov](mailto:claire.s.villanueva-weeks@jpl.nasa.gov)<br>
