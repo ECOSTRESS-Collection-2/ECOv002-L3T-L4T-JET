@@ -22,19 +22,18 @@ import rasters as rt
 from rasters import Raster, RasterGrid, RasterGeometry
 
 from koppengeiger import load_koppen_geiger
-import FLiESANN
 from geos5fp import GEOS5FP, FailedGEOS5FPDownload
 from sun_angles import calculate_SZA_from_DOY_and_hour
 from ECOv002_granules import L2TLSTE, L2TSTARS, L3TJET, L3TSM, L3TSEB, L3TMET, L4TESI, L4TWUE
 from ECOv002_granules import ET_COLORMAP, SM_COLORMAP, WATER_COLORMAP, CLOUD_COLORMAP, RH_COLORMAP, GPP_COLORMAP
+import FLiESANN
+from FLiESANN import BlankOutputError
+from FLiESLUT import FLiESLUT
 
 from .exit_codes import *
 from .BESS.BESS import BESS
 from .runconfig import read_runconfig, ECOSTRESSRunConfig
-from FLiESANN import BlankOutputError
-from FLiESLUT import FLiESLUT
 from .LPDAAC.LPDAACDataPool import LPDAACServerUnreachable
-from .MCD12.MCD12C1 import MCD12C1
 from .MOD16.MOD16 import MOD16
 from .PTJPL import PTJPL
 from .PTJPLSM import PTJPLSM
