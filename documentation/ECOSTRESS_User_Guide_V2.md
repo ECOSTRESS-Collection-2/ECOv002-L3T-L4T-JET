@@ -56,10 +56,10 @@ Readers seeking additional information may contact:
 ## 4. Technical Details
 
 ### 4.1 HDF-EOS5 Orbit/Scene Gridded Products
-The HDF-EOS5 format (files ending in `.h5`) is used for long-term archiving but is not recommended for end-user analysis. All raster layers are projected to a globally snapped 0.0006° grid in WGS84 (approx. 70 m resolution).
+The HDF-EOS5 format (files ending in `.h5`) is used for long-term archiving but is not recommended for end-user analysis. All raster layers are projected to a globally snapped 0.0006° grid in WGS84 (EPSG:4326).
 
 ### 4.2 Cloud-Optimized GeoTIFF (COG) Tiled Products
-To provide analysis-ready data, ECOSTRESS Collection 2 products are distributed in a tiled form using the COG format. The system uses the modified Military Grid Reference System (MGRS) scheme used by Sentinel 2, dividing UTM zones into square tiles 109,760 m across. Each tile consists of 1568 rows by 1568 columns (70 m pixels).
+To provide analysis-ready data, ECOSTRESS Collection 2 products are distributed in a tiled form using the COG format. The system uses the modified Military Grid Reference System (MGRS) scheme used by Sentinel-2, providing global coverage in 110 km × 110 km tiles at native 70 m resolution.
 
 ### 4.3 Quality Flags
 Two high-level quality flags (unsigned 8-bit integer) are provided:
@@ -125,7 +125,7 @@ The JET product combines ECOSTRESS ST/emissivity with STARS NDVI/albedo and down
 | :--- | :--- | :--- |
 | ESI | float32 | ratio: 0 to 1 (actual ET / PET) |
 | PET | float32 | $W~m^{-2}$ (Potential ET) |
-| WUE | float32 | $g~C~kg^{-1}~H_2O$ |
+| WUE | float32 | $g~C~kg^{-1}~H_{2}O$ |
 | GPP | float32 | μmol $m^{-2}s^{-1}$ (Gross Primary Production) |
 
 ---
