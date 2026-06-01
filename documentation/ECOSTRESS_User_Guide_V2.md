@@ -125,7 +125,7 @@ The JET product combines ECOSTRESS ST/emissivity with STARS NDVI/albedo and down
 | :--- | :--- | :--- |
 | ESI | float32 | ratio: 0 to 1 (actual ET / PET) |
 | PET | float32 | $W~m^{-2}$ (Potential ET) |
-| WUE | float32 | $g~C~kg^{-1}H_{2}O$ |
+| WUE | float32 | $g~C~kg^{-1}~H_2O$ |
 | GPP | float32 | μmol $m^{-2}s^{-1}$ (Gross Primary Production) |
 
 ---
