@@ -12,8 +12,8 @@ import numpy as np
 import rasters as rt
 from rasters import Raster, RasterGeometry
 
-from modisci import MODISCI
-from geos5fp import GEOS5FP
+from MODISCI import MODISCI
+from GEOS5FP import GEOS5FP
 from gedi_canopy_height import GEDICanopyHeight
 from soil_capacity_wilting import SoilGrids
 

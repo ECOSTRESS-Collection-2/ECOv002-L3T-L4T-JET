@@ -20,11 +20,12 @@ import colored_logging as cl
 import rasters as rt
 from rasters import Raster, RasterGeometry, RasterGrid
 
-from modisci import MODISCI
-from geos5fp import GEOS5FP
+from MODISCI import MODISCI
+from GEOS5FP import GEOS5FP
 from gedi_canopy_height import GEDICanopyHeight
 
 from FLiESANN import FLiESANN
+from ..FLiES import FLiES
 
 from ..SRTM import SRTM
 

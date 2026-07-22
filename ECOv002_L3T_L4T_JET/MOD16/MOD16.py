@@ -17,9 +17,11 @@ import warnings
 
 import rasters as rt
 from rasters import Raster, RasterGrid, RasterGeometry
-from geos5fp import GEOS5FP
+from GEOS5FP import GEOS5FP
 
 from MCD12C1_2019_v006 import load_MCD12C1_IGBP
+
+from ..FLiES import FLiES
 
 from ..SRTM import SRTM
 from ..model.model import DEFAULT_PREVIEW_QUALITY, DEFAULT_RESAMPLING

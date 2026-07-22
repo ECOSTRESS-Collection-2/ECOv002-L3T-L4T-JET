@@ -10,7 +10,7 @@ import warnings
 import colored_logging as cl
 import rasters as rt
 from rasters import Raster, RasterGrid
-from geos5fp import GEOS5FP
+from GEOS5FP import GEOS5FP
 
 from ..SRTM import SRTM
 from ..model.model import DEFAULT_PREVIEW_QUALITY, DEFAULT_RESAMPLING, Model
