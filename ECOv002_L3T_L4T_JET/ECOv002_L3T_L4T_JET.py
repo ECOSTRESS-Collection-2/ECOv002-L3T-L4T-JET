@@ -28,6 +28,7 @@ from ECOv002_granules import L2TLSTE, L2TSTARS, L3TJET, L3TSM, L3TSEB, L3TMET, L
 from ECOv002_granules import ET_COLORMAP, SM_COLORMAP, WATER_COLORMAP, CLOUD_COLORMAP, RH_COLORMAP, GPP_COLORMAP
 import FLiESANN
 # from FLiESLUT import FLiESLUT
+from .FLiES import FLiES
 from .FLiES.FLiESLUT import FLiESLUT
 
 from .exit_codes import *
@@ -1034,12 +1035,12 @@ def L3T_L4T_JET(
             show_distribution=show_distribution
         )
 
-        # FLiES_ANN_model = FLiES(
-        #     working_directory=working_directory,
-        #     GEOS5FP_connection=GEOS5FP_connection,
-        #     save_intermediate=save_intermediate,
-        #     show_distribution=show_distribution
-        # )
+        FLiES_ANN_model = FLiES(
+            working_directory=working_directory,
+            GEOS5FP_connection=GEOS5FP_connection,
+            save_intermediate=save_intermediate,
+            show_distribution=show_distribution
+        )
 
 
         # MCD12_connnection = MCD12C1(
@@ -1067,13 +1068,13 @@ def L3T_L4T_JET(
             show_distribution=show_distribution
         )
 
-        # SZA = FLiES_ANN_model.SZA(day_of_year=day_of_year, hour_of_day=hour_of_day, geometry=geometry)
-        SZA = calculate_SZA_from_DOY_and_hour(
-            lat=geometry.lat,
-            lon=geometry.lon,
-            DOY=day_of_year,
-            hour=hour_of_day
-        )
+        SZA = FLiES_ANN_model.SZA(day_of_year=day_of_year, hour_of_day=hour_of_day, geometry=geometry)
+        # SZA = calculate_SZA_from_DOY_and_hour(
+        #     lat=geometry.lat,
+        #     lon=geometry.lon,
+        #     DOY=day_of_year,
+        #     hour=hour_of_day
+        # )
 
         check_distribution(SZA, "SZA", date_UTC=date_UTC, target=tile)
 
@@ -1098,43 +1099,43 @@ def L3T_L4T_JET(
 
         logger.info(f"running Forest Light Environmental Simulator for {cl.place(tile)} at {cl.time(time_UTC)} UTC")
 
-        # Ra, SWin_FLiES_ANN_raw, UV, VIS, NIR, VISdiff, NIRdiff, VISdir, NIRdir = FLiES_ANN_model.FLiES(
-        #     geometry=geometry,
-        #     target=tile,
-        #     time_UTC=time_UTC,
-        #     albedo=albedo,
-        #     COT=COT,
-        #     AOT=AOT,
-        #     SZA=SZA,
-        #     vapor_gccm=vapor_gccm,
-        #     ozone_cm=ozone_cm,
-        #     elevation_km=elevation_km
-        # )
+        Ra, SWin_FLiES_ANN_raw, UV, VIS, NIR, VISdiff, NIRdiff, VISdir, NIRdir = FLiES_ANN_model.FLiES(
+            geometry=geometry,
+            target=tile,
+            time_UTC=time_UTC,
+            albedo=albedo,
+            COT=COT,
+            AOT=AOT,
+            SZA=SZA,
+            vapor_gccm=vapor_gccm,
+            ozone_cm=ozone_cm,
+            elevation_km=elevation_km
+        )
 
         doy_solar = time_solar.timetuple().tm_yday
         kg = load_koppen_geiger(albedo.geometry)
 
-        FLiES_results = FLiESANN.process_FLiES_ANN(
-            doy=doy_solar,
-            albedo=albedo,
-            COT=COT,
-            AOT=AOT,
-            vapor_gccm=vapor_gccm,
-            ozone_cm=ozone_cm,
-            elevation_km=elevation_km,
-            SZA=SZA,
-            KG_climate=kg
-        )
+        # FLiES_results = FLiESANN.process_FLiES_ANN(
+        #     doy=doy_solar,
+        #     albedo=albedo,
+        #     COT=COT,
+        #     AOT=AOT,
+        #     vapor_gccm=vapor_gccm,
+        #     ozone_cm=ozone_cm,
+        #     elevation_km=elevation_km,
+        #     SZA=SZA,
+        #     KG_climate=kg
+        # )
 
-        Ra = FLiES_results["Ra"]
-        SWin_FLiES_ANN_raw = FLiES_results["Rg"]
-        UV = FLiES_results["UV"]
-        VIS = FLiES_results["VIS"]
-        NIR = FLiES_results["NIR"]
-        VISdiff = FLiES_results["VISdiff"]
-        NIRdiff = FLiES_results["NIRdiff"]
-        VISdir = FLiES_results["VISdir"]
-        NIRdir = FLiES_results["NIRdir"]
+        # Ra = FLiES_results["Ra"]
+        # SWin_FLiES_ANN_raw = FLiES_results["Rg"]
+        # UV = FLiES_results["UV"]
+        # VIS = FLiES_results["VIS"]
+        # NIR = FLiES_results["NIR"]
+        # VISdiff = FLiES_results["VISdiff"]
+        # NIRdiff = FLiES_results["NIRdiff"]
+        # VISdir = FLiES_results["VISdir"]
+        # NIRdir = FLiES_results["NIRdir"]
 
         SWin_FLiES_LUT = FLiES_LUT_model.FLiES_LUT(
             geometry=geometry,

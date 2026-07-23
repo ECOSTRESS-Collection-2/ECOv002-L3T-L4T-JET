@@ -289,15 +289,24 @@ class FLiES(Model):
         inputs["ctype0"] = np.float32(inputs.ctype == 0)
         inputs["ctype1"] = np.float32(inputs.ctype == 1)
         inputs["ctype3"] = np.float32(inputs.ctype == 3)
-        inputs["atype1"] = np.float32(inputs.ctype == 1)
-        inputs["atype2"] = np.float32(inputs.ctype == 2)
-        inputs["atype4"] = np.float32(inputs.ctype == 4)
-        inputs["atype5"] = np.float32(inputs.ctype == 5)
+        inputs["atype1"] = np.float32(inputs.atype == 1)
+        inputs["atype2"] = np.float32(inputs.atype == 2)
+        inputs["atype4"] = np.float32(inputs.atype == 4)
+        inputs["atype5"] = np.float32(inputs.atype == 5)
 
         inputs = inputs[
             ["ctype0", "ctype1", "ctype3", "atype1", "atype2", "atype4", "atype5", "COT", "AOT", "vapor_gccm",
              "ozone_cm", "albedo", "elevation_km", "SZA"]]
-        outputs = self.ANN_model.predict(inputs)
+        # Newer FLiES ANN artifacts expect (batch, timesteps, features); provide a singleton timestep.
+        inputs_array = np.asarray(inputs, dtype=np.float32)[:, np.newaxis, :]
+        outputs = self.ANN_model.predict(inputs_array)
+        outputs = np.asarray(outputs)
+
+        if outputs.ndim == 3:
+            outputs = outputs[:, 0, :]
+        elif outputs.ndim != 2:
+            raise ValueError(f"unexpected FLiES ANN output rank: {outputs.ndim}")
+
         shape = COT.shape
         tm = Raster(np.clip(outputs[:, 0].reshape(shape), 0, 1).astype(np.float32), geometry=geometry, nodata=np.nan)
         puv = Raster(np.clip(outputs[:, 1].reshape(shape), 0, 1).astype(np.float32), geometry=geometry, nodata=np.nan)
