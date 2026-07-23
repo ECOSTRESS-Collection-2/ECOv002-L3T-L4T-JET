@@ -21,6 +21,7 @@ L2T_LSTE_granule = download_ECOSTRESS_granule(
     tile="11SPS", 
     aquisition_date="2024-10-22",
     parent_directory=working_directory
+)
 
 logger.info("acquiring L2T STARS granule")
 
