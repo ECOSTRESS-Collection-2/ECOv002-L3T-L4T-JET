@@ -27,7 +27,8 @@ from sun_angles import calculate_SZA_from_DOY_and_hour
 from ECOv002_granules import L2TLSTE, L2TSTARS, L3TJET, L3TSM, L3TSEB, L3TMET, L4TESI, L4TWUE
 from ECOv002_granules import ET_COLORMAP, SM_COLORMAP, WATER_COLORMAP, CLOUD_COLORMAP, RH_COLORMAP, GPP_COLORMAP
 import FLiESANN
-from FLiESLUT import FLiESLUT
+# from FLiESLUT import FLiESLUT
+from .FLiES.FLiESLUT import FLiESLUT
 
 from .exit_codes import *
 from .BESS.BESS import BESS
@@ -1009,7 +1010,7 @@ def L3T_L4T_JET(
         metadata["ProductMetadata"]["QAPercentCloudCover"] = percent_cloud
 
         GEOS5FP_connection = GEOS5FP(
-            working_directory=working_directory,
+            # working_directory=working_directory,
             download_directory=GEOS5FP_directory
         )
 

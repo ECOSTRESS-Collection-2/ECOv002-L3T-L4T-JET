@@ -111,7 +111,7 @@ class PTJPLSM(PTJPL):
 
         if soil_grids_connection is None:
             soil_grids_connection = SoilGrids(
-                working_directory=static_directory,
+                # working_directory=static_directory,
                 source_directory=soil_grids_download
             )
 

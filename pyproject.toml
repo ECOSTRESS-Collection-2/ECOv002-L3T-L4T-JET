@@ -25,7 +25,7 @@ dependencies = [
     "FLiESLUT",
     "gedi-canopy-height",
     "geopandas",
-    "GEOS5FP>=1.0.5",
+    "GEOS5FP>=2.20.0",
     "h5py",
     "koppengeiger>=1.0.4",
     "matplotlib",
