@@ -42,7 +42,7 @@ dependencies = [
     "pyproj",
     "pyresample",
     "rasterio",
-    "rasters>=1.4.6",
+    "rasters>=1.19.0",
     "scikit-image",
     "scikit-learn",
     "scipy",
